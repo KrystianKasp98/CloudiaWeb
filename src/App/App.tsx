@@ -1,11 +1,12 @@
-import { BACKEND_URL } from '../consts';
+import Login from '../pages/Login/Login';
+
 import './styles/App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  console.log(BACKEND_URL);
   return (
     <div className="App">
-      <p>hi</p>
+      <Login/>
     </div>
   );
 }
