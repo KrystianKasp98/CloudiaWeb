@@ -8,10 +8,7 @@ const resources = {
 
 export const resourcesLanguages = ['en', 'pl-PL'];
 
-//@todo create component that allows change language
-// https://www.i18next.com/overview/api
 
-//@todo add defaultLanguage in localstorage
 
 export default {
   resources,

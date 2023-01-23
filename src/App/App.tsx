@@ -15,7 +15,6 @@ function App() {
   const navigate = useNavigate();
   const [, handleRefreshApp] = useState<null|{}>(null);
   const [darkMode, setDarkMode] = useState<boolean>(true);
-  //@todo save darkMode option in localStorage
   const forceRefreshApp = useCallback(() => handleRefreshApp({}), []);
 
   useEffect(() => {
