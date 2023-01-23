@@ -1,15 +1,15 @@
-import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import {Route, Routes, useNavigate, useLocation} from 'react-router-dom';
+import {useEffect} from 'react';
 
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
-import Error from "../pages/Error/Error";
+import Error from '../pages/Error/Error';
 
 import './styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const { state } = useLocation();
+  const {state} = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {

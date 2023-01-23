@@ -1,9 +1,9 @@
-import ApiBase from "../ApiBase";
-import { CredentialsI } from "./types";
+import ApiBase from '../ApiBase';
+import {CredentialsI} from './types';
 
 
 export default class UsersApi extends ApiBase {
-  static url: string = `${this.backendUrl}/users`;
+  static url = `${this.backendUrl}/users`;
   constructor() {
     super();
   }

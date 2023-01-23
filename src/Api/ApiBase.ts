@@ -1,5 +1,5 @@
 import request from 'superagent';
-import { BACKEND_URL } from '../consts';
+import {BACKEND_URL} from '../consts';
 
 
 class ApiBase {

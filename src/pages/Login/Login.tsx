@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import type { FormEvent } from 'react';
-import { USER_LOGIN, USER_PASSWORD } from '../../consts';
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import type {FormEvent} from 'react';
+import {USER_LOGIN, USER_PASSWORD} from '../../consts';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,26 +10,26 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import UsersApi from '../../Api/Users/Users';
-import { CredentialsI } from './types';
+import {CredentialsI} from './types';
 
 function Login() {
   const [login, setLogin] = useState<string>(USER_LOGIN);
   const [password, setPassword] = useState<string>(USER_PASSWORD);
-  
-  const navigate = useNavigate(); 
+
+  const navigate = useNavigate();
 
   const handleLogin = async (event: FormEvent<HTMLFormElement>, credentials: CredentialsI) => {
     event.preventDefault();
     try {
       const result = await UsersApi.login(credentials);
-      console.log({ result });
+      console.log({result});
       if (result) {
         navigate('/', {state: {login: true}});
       }
     } catch (err) {
-      console.error(`failed to login, reason: `, err);
+      console.error('failed to login, reason: ', err);
     }
-  }
+  };
 
   return (
     <Container>
