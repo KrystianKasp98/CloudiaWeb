@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import type {FormEvent} from 'react';
 import {USER_LOGIN, USER_PASSWORD} from '../../consts';
+import {t} from "i18next";
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -42,23 +43,23 @@ function Login() {
         <Col lg={3}>
           <Form onSubmit={e => handleLogin(e, {password, login})}>
             <Form.Group className="mb-3" controlId="login">
-              <Form.Label>Login</Form.Label>
+              <Form.Label>{t('login.form.login')}</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter login"
+                placeholder={t('login.form.loginPlaceholder')}
                 onChange={e => setLogin(e.target.value)}
                 value={login}
               />
               <Form.Text className="text-muted">
-                We'll never share your login with anyone else.
+                {t('login.form.loginText')}
               </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>{t('login.form.password')}</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder={t('login.form.passwordPlaceholder')}
                 onChange={e => setPassword(e.target.value)}
                 value={password}
               />
@@ -67,7 +68,7 @@ function Login() {
               variant="primary"
               type="submit"
             >
-              Submit
+              {t('login.form.signIn')}
             </Button>
           </Form>
         </Col>

@@ -1,0 +1,17 @@
+{
+  "translation": {
+    "main": {
+      "title": "Main Page"
+    },
+    "login": {
+      "form": {
+        "login": "Login",
+        "loginText": "We'll never share your login with anyone else.",
+        "loginPlaceholder": "Enter login",
+        "password": "Password",
+        "passwordPlaceholder": "Enter Password",
+        "signIn": "Sign in"
+      }
+    }
+  }
+}

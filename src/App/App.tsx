@@ -22,9 +22,9 @@ function App() {
     <div className="App">
       <Routes>
         {/* uncomment after testing */}
-        {/* <Route path="/login" element={<Login/>} /> */}
+        <Route path="/login" element={<Login/>} />
         {/* comment after testing */}
-        <Route path="/login" element={import.meta.env.MODE === 'development' ? <Main/> : <Login/>} />
+        {/* <Route path="/login" element={import.meta.env.MODE === 'development' ? <Main/> : <Login/>} /> */}
         <Route path="/" element={<Main />} />
         <Route path="*" element={<Error />} />
       </Routes>

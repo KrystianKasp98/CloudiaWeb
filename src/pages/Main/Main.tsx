@@ -1,7 +1,9 @@
+import {t} from 'i18next';
+
 function Main() {
   return (
     <div>
-      hello hello
+      {t('main.title')}
     </div>
   );
 }

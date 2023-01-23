@@ -1,0 +1,17 @@
+{
+  "translation": {
+    "main": {
+      "title": "Strona główna"
+    },
+    "login": {
+      "form": {
+        "login": "Login",
+        "loginText": "Nigdy nie udostępnimy Twojego loginu.",
+        "loginPlaceholder": "Wpisz login",
+        "password": "Hasło",
+        "passwordPlaceholder": "Wpisz Hasło",
+        "signIn": "Zaloguj się"
+      }
+    }
+  }
+}
