@@ -10,6 +10,8 @@ const resources = {
 //@todo create component that allows change language
 // https://www.i18next.com/overview/api
 
+//@todo add defaultLanguage in localstorage
+
 export default async function () {
   await i18n
     .init({
