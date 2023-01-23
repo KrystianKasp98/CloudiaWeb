@@ -1,4 +1,28 @@
+@import '../../styles/main';
+
 *{
   padding: 0;
   margin: 0;
+}
+
+.App {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App__mode--dark {
+  background-color: $dark;
+  color: $light;
+
+  & input[type],
+  select {
+    background-color: $dark--light;
+    color: $light;
+  }
+}
+
+.App__mode--light {
+  background-color: $light;
+  color: $dark;
 }

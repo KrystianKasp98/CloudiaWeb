@@ -1,4 +1,25 @@
 * {
   padding: 0;
   margin: 0;
+}
+
+.App {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App__mode--dark {
+  background-color: rgb(26, 9, 41);
+  color: rgb(255, 255, 255);
+}
+.App__mode--dark input[type],
+.App__mode--dark select {
+  background-color: rgb(83, 70, 95);
+  color: rgb(255, 255, 255);
+}
+
+.App__mode--light {
+  background-color: rgb(255, 255, 255);
+  color: rgb(26, 9, 41);
 }/*# sourceMappingURL=App.css.map */

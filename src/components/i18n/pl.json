@@ -12,6 +12,15 @@
         "passwordPlaceholder": "Wpisz Hasło",
         "signIn": "Zaloguj się"
       }
+    },
+    "components": {
+      "languageSelector": {
+        "changeLanguage": "Zmień język",
+        "languages": {
+          "pl-PL": "polski",
+          "en": "angielski"
+        }
+      }
     }
   }
 }

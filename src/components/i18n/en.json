@@ -12,6 +12,15 @@
         "passwordPlaceholder": "Enter Password",
         "signIn": "Sign in"
       }
+    },
+    "components": {
+      "languageSelector": {
+        "changeLanguage": "Change language",
+        "languages": {
+          "pl-PL": "polish",
+          "en": "english"
+        }
+      }
     }
   }
 }
