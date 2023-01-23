@@ -21,7 +21,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<Login />} />
+        {/* uncomment after testing */}
+        {/* <Route path="/login" element={<Login/>} /> */}
+        {/* comment after testing */}
+        <Route path="/login" element={import.meta.env.MODE === 'development' ? <Main/> : <Login/>} />
         <Route path="/" element={<Main />} />
         <Route path="*" element={<Error />} />
       </Routes>
