@@ -14,6 +14,6 @@ export const resourcesLanguages = ['en', 'pl-PL'];
 export default {
   resources,
   fallbackLng: 'en',
-  lng: LocalStorage.get('lang') || window.navigator.language || 'en',
+  lng: LocalStorage.get(LocalStorage.keys.lang) || window.navigator.language || 'en',
   // lng: 'en-En' // testing english version
 };

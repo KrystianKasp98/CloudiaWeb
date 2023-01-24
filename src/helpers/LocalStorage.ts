@@ -1,4 +1,12 @@
+interface KeysI {
+  [key: string]: string;
+}
+
 export default class LocalStorage {
+  static keys: KeysI = {
+    lang: 'lang',
+    darkMode: 'darkMode'
+  }
 
   static isSupported(): boolean {
     return typeof Storage !== 'undefined';

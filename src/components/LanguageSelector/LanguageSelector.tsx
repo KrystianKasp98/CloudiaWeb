@@ -23,7 +23,7 @@ function LanguageSelector({refreshApp}: LanguageSelectorProps) {
         refreshApp();
       });
     
-    LocalStorage.set('lang', lang);
+    LocalStorage.set(LocalStorage.keys.lang, lang);
   }
 
   return (
