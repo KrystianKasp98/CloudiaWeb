@@ -1,7 +1,6 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import type {FormEvent} from 'react';
-import {USER_LOGIN, USER_PASSWORD} from '../../consts';
 import {t} from "i18next";
 
 import Button from 'react-bootstrap/Button';
@@ -10,12 +9,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import {AppContext} from '../../App/context/AppContext';
+import {USER_LOGIN, USER_PASSWORD} from '../../consts';
 import UsersApi from '../../Api/Users/Users';
 import {CredentialsI} from './types';
 
 function Login() {
   const [login, setLogin] = useState<string>(USER_LOGIN);
   const [password, setPassword] = useState<string>(USER_PASSWORD);
+  const context = useContext(AppContext);
 
   const navigate = useNavigate();
 
@@ -65,7 +67,7 @@ function Login() {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant={context?.darkMode ? 'light' : 'dark'}
               type="submit"
             >
               {t('login.form.signIn')}

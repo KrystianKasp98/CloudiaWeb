@@ -1,0 +1,24 @@
+.ThemeSwitch {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  font-size: 0.7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ThemeSwitch .ThemeSwitch__button {
+  padding: 5px;
+  border-radius: 50%;
+  border: none;
+}
+.ThemeSwitch .ThemeSwitch__button--light {
+  background-color: rgb(26, 9, 41);
+}
+.ThemeSwitch .ThemeSwitch__button--light svg {
+  color: rgb(255, 255, 255);
+}
+.ThemeSwitch .ThemeSwitch__button--dark {
+  background-color: rgb(255, 255, 255);
+}/*# sourceMappingURL=ThemeSwitch.css.map */

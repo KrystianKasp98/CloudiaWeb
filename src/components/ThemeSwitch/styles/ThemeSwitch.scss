@@ -1,0 +1,31 @@
+@import '../../../styles/main';
+
+.ThemeSwitch {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  font-size: 0.7em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & .ThemeSwitch__button {
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+  }
+
+  & .ThemeSwitch__button--light {
+    background-color: $dark;
+
+    & svg {
+      color: $light;
+    }
+  }
+
+  & .ThemeSwitch__button--dark {
+    background-color: $light;
+  }
+}

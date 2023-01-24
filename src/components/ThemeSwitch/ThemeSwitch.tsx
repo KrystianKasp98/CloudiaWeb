@@ -1,5 +1,8 @@
 import { useContext } from 'react';
 import { AppContext } from '../../App/context/AppContext';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
+
+import './styles/ThemeSwitch.scss';
 
 interface ThemeSwitchProps {
   refreshApp: () => void;
@@ -16,8 +19,13 @@ function ThemeSwitch({refreshApp}: ThemeSwitchProps) {
   }
 
   return (
-    <div>
-      <button onClick={switchTheme}>switch mode</button>
+    <div className='ThemeSwitch'>
+      <button
+        onClick={switchTheme}
+        className={`ThemeSwitch__button ${context?.darkMode ? 'ThemeSwitch__button--dark' : 'ThemeSwitch__button--light'}`}
+      >
+        {context?.darkMode ? <MdDarkMode size={20} /> : <MdLightMode size={20} />}
+      </button>
     </div>
   );
 }
