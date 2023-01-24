@@ -2,6 +2,7 @@ import { t } from 'i18next';
 import { i18n } from '../../main';
 import type {ChangeEvent} from 'react';
 import {resourcesLanguages} from '../i18n';
+import LocalStorage from '../../helpers/LocalStorage';
 
 import './styles/LanguageSelector.scss';
 
@@ -21,6 +22,8 @@ function LanguageSelector({refreshApp}: LanguageSelectorProps) {
         t('key');
         refreshApp();
       });
+    
+    LocalStorage.set('lang', lang);
   }
 
   return (

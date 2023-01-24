@@ -1,5 +1,6 @@
 import en from './en.json';
 import pl from './pl.json';
+import LocalStorage from '../../helpers/LocalStorage';
 
 const resources = {
   en,
@@ -13,6 +14,6 @@ export const resourcesLanguages = ['en', 'pl-PL'];
 export default {
   resources,
   fallbackLng: 'en',
-  lng: window.navigator.language || 'en',
+  lng: LocalStorage.get('lang') || window.navigator.language || 'en',
   // lng: 'en-En' // testing english version
 };
