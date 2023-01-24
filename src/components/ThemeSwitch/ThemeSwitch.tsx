@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AppContext } from '../../App/context/AppContext';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import LocalStorage from '../../helpers/LocalStorage';
 
 import './styles/ThemeSwitch.scss';
 
@@ -14,6 +15,7 @@ function ThemeSwitch({refreshApp}: ThemeSwitchProps) {
   const switchTheme = () => {
     if (context?.toggleDarkMode) {
       context.toggleDarkMode();
+      LocalStorage.set(LocalStorage.keys.darkMode, !context.darkMode);
       refreshApp();
     }
   }

@@ -26,10 +26,10 @@ export default class LocalStorage {
   }
 
   static set(key: string, value: string | number | [] | {}) {
-    if (value) {
+    if (value !== null && value !== undefined) {
       localStorage.setItem(key, JSON.stringify(value));
     } else {
-      console.error(`Can not save value to localStorage, falsy value was passed: ${value}`);
+      console.error(`Can not save value to localStorage, wrong value was passed: ${value}`);
     }
   }
 

@@ -1,4 +1,5 @@
 import {createContext, useState} from 'react';
+import LocalStorage from '../../helpers/LocalStorage';
 
 interface AppProviderI {
   children: JSX.Element | JSX.Element[];
@@ -12,7 +13,8 @@ interface ContextPropsI {
 export const AppContext = createContext<null | ContextPropsI>(null);
 
 const AppProvider = ({children}: AppProviderI) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const defaultDarkMode = LocalStorage.has(LocalStorage.keys.darkMode) ? LocalStorage.get(LocalStorage.keys.darkMode) : false;
+  const [darkMode, setDarkMode] = useState<boolean>(defaultDarkMode);
 
   const toggleDarkMode = () => setDarkMode(val => !val);
 
