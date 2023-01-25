@@ -23,7 +23,8 @@ function Main() {
 
   const renderNotes = () => {
     return notes ? 
-      notes.map(({ _id, note, date }) => <Note key={_id} note={note} date={date} />) :
+      notes.map(({ _id, note, date, edits, isEdited }) =>
+        <Note key={_id} note={note} date={date} edits={edits} isEdited={isEdited} />) :
       null
   }
 

@@ -1,6 +1,6 @@
 import { NotePropsI } from "../../../Api/Notes/types";
 
-function Note({ note, date }: NotePropsI) {
+function Note({ note, date, edits, isEdited }: NotePropsI) {
 
   const formatHeaderDate = (date: Date | string) => {
     date = date.toString();
@@ -10,11 +10,12 @@ function Note({ note, date }: NotePropsI) {
   }
 
   return (  
-    <div className="card text-white bg-dark mb-3" style={{"width": "18rem", "margin": "5px 10px"}}>
+    <div className="card text-white bg-dark mb-3" style={{"width": "18rem", "margin": "5px 10px", "height": "170px"}}>
       <div className="card-header">{formatHeaderDate(date)}</div>
     <div className="card-body">
         <p className="card-text">{note}</p>
     </div>
+    {isEdited ? <span title={JSON.stringify(edits, null, 4)}>edited</span> : null}  
   </div>
   );
 }
