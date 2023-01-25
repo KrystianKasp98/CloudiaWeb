@@ -5,6 +5,7 @@ import {BrowserRouter} from 'react-router-dom';
 import i18n from 'i18next';
 import initObject from '../src/components/i18n/index';
 import AppProvider from './App/context/AppContext';
+import { CookiesProvider } from 'react-cookie';
 
 
 await i18n
@@ -13,9 +14,11 @@ await i18n
   ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
       <BrowserRouter>
-        <AppProvider>
-          <App />
-        </AppProvider>
+        <CookiesProvider>
+          <AppProvider>
+            <App />
+          </AppProvider>
+        </CookiesProvider>
       </BrowserRouter>
   </React.StrictMode>,
 );

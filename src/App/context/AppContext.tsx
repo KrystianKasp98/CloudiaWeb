@@ -1,5 +1,6 @@
 import {createContext, useState} from 'react';
 import LocalStorage from '../../helpers/LocalStorage';
+import { useCookies } from 'react-cookie';
 
 interface AppProviderI {
   children: JSX.Element | JSX.Element[];
@@ -8,6 +9,8 @@ interface AppProviderI {
 interface ContextPropsI {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  cookies: any;
+  setCookie: (name: 'authenticated', value: any, options?: {} | undefined) => void;
 }
 
 export const AppContext = createContext<null | ContextPropsI>(null);
@@ -18,9 +21,13 @@ const AppProvider = ({children}: AppProviderI) => {
 
   const toggleDarkMode = () => setDarkMode(val => !val);
 
+  const [cookies, setCookie] = useCookies(['authenticated']);
+
   const value: ContextPropsI = {
     darkMode,
-    toggleDarkMode
+    cookies,
+    toggleDarkMode,
+    setCookie,
   };
 
   return (

@@ -27,6 +27,7 @@ function Login() {
       const result = await UsersApi.login(credentials);
       console.log({result});
       if (result) {
+        context?.setCookie('authenticated', 'true', { maxAge: 3600 });
         navigate('/', {state: {login: true}});
       }
     } catch (err) {
