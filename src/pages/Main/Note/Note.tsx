@@ -1,4 +1,5 @@
 import { NotePropsI } from "../../../Api/Notes/types";
+import { t } from 'i18next';
 
 function Note({ note, date, edits, isEdited }: NotePropsI) {
 
@@ -15,7 +16,7 @@ function Note({ note, date, edits, isEdited }: NotePropsI) {
     <div className="card-body">
         <p className="card-text">{note}</p>
     </div>
-    {isEdited ? <span title={JSON.stringify(edits, null, 4)}>edited</span> : null}  
+      {isEdited ? <span title={JSON.stringify(edits, null, 4)}>{t(t('main.edited'))}</span> : null}  
   </div>
   );
 }

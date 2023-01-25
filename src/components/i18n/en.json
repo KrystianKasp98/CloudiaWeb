@@ -1,7 +1,8 @@
 {
   "translation": {
     "main": {
-      "title": "Main Page"
+      "title": "Main Page",
+      "edited": "edited"
     },
     "login": {
       "form": {
