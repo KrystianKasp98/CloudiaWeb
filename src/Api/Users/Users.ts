@@ -8,8 +8,8 @@ export default class UsersApi extends ApiBase {
     super();
   }
 
-  static login(credentials: CredentialsI): Promise<boolean> {
-    return this.ajax.
+  static async login(credentials: CredentialsI): Promise<boolean> {
+    return await this.ajax.
       post(`${this.url}/login`).
       send(credentials).
       then(res => res.body).

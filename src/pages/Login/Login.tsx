@@ -38,7 +38,7 @@ function Login() {
     <Container>
       <Row className="justify-content-center mt-5 mb-5">
         <Col lg={3}>
-          <h1>Cloudia App</h1>
+          <h1 className="text-center">Cloudia App</h1>
         </Col>
       </Row>
       <Row className="justify-content-md-center">
