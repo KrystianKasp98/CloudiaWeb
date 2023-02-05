@@ -1,7 +1,7 @@
 interface EditsI {
-    note: string;
-    date: Date;
-    _id: string;
+  note: string;
+  date: Date;
+  _id: string;
 }
 
 export interface MainNoteI {

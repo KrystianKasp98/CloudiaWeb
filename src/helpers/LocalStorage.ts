@@ -6,7 +6,7 @@ export default class LocalStorage {
   static keys: KeysI = {
     lang: 'lang',
     darkMode: 'darkMode'
-  }
+  };
 
   static isSupported(): boolean {
     return typeof Storage !== 'undefined';
@@ -29,7 +29,9 @@ export default class LocalStorage {
     if (value !== null && value !== undefined) {
       localStorage.setItem(key, JSON.stringify(value));
     } else {
-      console.error(`Can not save value to localStorage, wrong value was passed: ${value}`);
+      console.error(
+        `Can not save value to localStorage, wrong value was passed: ${value}`
+      );
     }
   }
 

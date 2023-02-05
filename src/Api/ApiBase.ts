@@ -1,9 +1,10 @@
 import request from 'superagent';
-import {BACKEND_URL} from '../consts';
 
+import { BACKEND_URL } from '../consts';
 
 class ApiBase {
   static ajax: request.SuperAgentStatic = request;
+
   static backendUrl: string = BACKEND_URL;
 
   static getErrorFromResponse(res: Response) {

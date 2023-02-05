@@ -1,34 +1,37 @@
-import {useState, useContext} from 'react';
-import {useNavigate} from 'react-router-dom';
-import type {FormEvent} from 'react';
-import {t} from "i18next";
-
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import type { FormEvent } from 'react';
+import { t } from 'i18next';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import {AppContext} from '../../App/context/AppContext';
-import {USER_LOGIN, USER_PASSWORD} from '../../consts';
+import { AppContext } from '../../App/context/AppContext';
+import { USER_LOGIN, USER_PASSWORD } from '../../consts';
 import UsersApi from '../../Api/Users/Users';
-import {CredentialsI} from './types';
 
-function Login() {
+import { CredentialsI } from './types';
+
+const Login = () => {
   const [login, setLogin] = useState<string>(USER_LOGIN);
   const [password, setPassword] = useState<string>(USER_PASSWORD);
   const context = useContext(AppContext);
 
   const navigate = useNavigate();
 
-  const handleLogin = async (event: FormEvent<HTMLFormElement>, credentials: CredentialsI) => {
+  const handleLogin = async (
+    event: FormEvent<HTMLFormElement>,
+    credentials: CredentialsI
+  ) => {
     event.preventDefault();
     try {
       const result = await UsersApi.login(credentials);
-      console.log({result});
+      console.log({ result });
       if (result) {
         context?.setCookie('authenticated', 'true', { maxAge: 3600 });
-        navigate('/', {state: {login: true}});
+        navigate('/', { state: { login: true } });
       }
     } catch (err) {
       console.error('failed to login, reason: ', err);
@@ -44,7 +47,7 @@ function Login() {
       </Row>
       <Row className="justify-content-md-center">
         <Col lg={3}>
-          <Form onSubmit={e => handleLogin(e, {password, login})}>
+          <Form onSubmit={e => handleLogin(e, { password, login })}>
             <Form.Group className="mb-3" controlId="login">
               <Form.Label>{t('login.form.login')}</Form.Label>
               <Form.Control
@@ -78,6 +81,6 @@ function Login() {
       </Row>
     </Container>
   );
-}
+};
 
 export default Login;
