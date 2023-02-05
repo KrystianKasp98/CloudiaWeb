@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback, useContext } from 'react';
 
 import Login from '../pages/Login/Login';
@@ -13,7 +13,6 @@ import './styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
-  const { state } = useLocation();
   const navigate = useNavigate();
   const [, handleRefreshApp] = useState<null | {}>(null);
   const context = useContext(AppContext);
@@ -21,7 +20,7 @@ const App = () => {
   const forceRefreshApp = useCallback(() => handleRefreshApp({}), []);
 
   useEffect(() => {
-    if (!state?.login) {
+    if (!context?.cookies?.authenticated) {
       navigate('/login');
     }
   }, []);

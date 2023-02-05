@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { FormEvent } from 'react';
 import { t } from 'i18next';
@@ -31,12 +31,19 @@ const Login = () => {
       console.log({ result });
       if (result) {
         context?.setCookie('authenticated', 'true', { maxAge: 3600 });
-        navigate('/', { state: { login: true } });
+        navigate('/');
       }
     } catch (err) {
       console.error('failed to login, reason: ', err);
     }
   };
+
+  useEffect(() => {
+    if (context?.cookies?.authenticated) {
+      console.log('it workis redirect');
+      navigate('/');
+    }
+  }, []);
 
   return (
     <Container>
