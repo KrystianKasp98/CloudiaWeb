@@ -17,8 +17,8 @@ const LanguageSelector = ({ refreshApp }: LanguageSelectorProps) => {
   const changeLanguage = async (event: ChangeEvent<HTMLSelectElement>) => {
     const lang = event.target.value;
 
-    i18n.changeLanguage(lang).then(t => {
-      t('key');
+    i18n.changeLanguage(lang).then(change => {
+      change('key');
       refreshApp();
     });
 

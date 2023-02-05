@@ -13,7 +13,7 @@ export default class LocalStorage {
   }
 
   static has(key: string): boolean {
-    return localStorage.hasOwnProperty(key);
+    return !!localStorage?.[key];
   }
 
   static get(key: string) {

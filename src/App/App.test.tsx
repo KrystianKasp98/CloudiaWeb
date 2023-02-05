@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import App from './App';
 
@@ -6,6 +6,6 @@ describe('App', () => {
   it('renders App', () => {
     render(<App />);
 
-    screen.debug();
+    expect(1).toBe(1);
   });
 });

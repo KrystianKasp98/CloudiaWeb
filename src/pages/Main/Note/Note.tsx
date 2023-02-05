@@ -3,11 +3,8 @@ import { t } from 'i18next';
 import { NotePropsI } from '../../../Api/Notes/types';
 
 const Note = ({ note, date, edits, isEdited }: NotePropsI) => {
-  const formatHeaderDate = (date: Date | string) => {
-    date = date.toString();
-    date = date.substring(0, 16);
-    date = date.replace('T', ' ');
-    return date;
+  const formatHeaderDate = (headerDate: Date | string) => {
+    return headerDate.toString().substring(0, 16).replace('T', ' ');
   };
 
   return (

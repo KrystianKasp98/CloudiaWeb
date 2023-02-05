@@ -24,6 +24,7 @@ const ThemeSwitch = ({ refreshApp }: ThemeSwitchProps) => {
   return (
     <div className="ThemeSwitch">
       <button
+        type="button"
         onClick={switchTheme}
         className={`ThemeSwitch__button ${
           context?.darkMode
