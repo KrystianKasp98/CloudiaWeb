@@ -29,8 +29,9 @@ const Login = () => {
     try {
       const result = await UsersApi.login(credentials);
       console.log({ result });
-      if (result) {
+      if (result?.authenticated) {
         context?.setCookie('authenticated', 'true', { maxAge: 3600 });
+        sessionStorage.setItem('sessionID', result?.sessionID);
         navigate('/');
       }
     } catch (err) {
