@@ -13,8 +13,8 @@ const Main = () => {
   const [notes, setNotes] = useState<MainNoteI[] | null>(null);
   useEffect(() => {
     const fetchNotes = async () => {
-      const notes = await NotesApi.getAll();
-      setNotes(notes);
+      const fetchedNotes = await NotesApi.getAll();
+      setNotes(fetchedNotes);
     };
     fetchNotes();
   }, []);
